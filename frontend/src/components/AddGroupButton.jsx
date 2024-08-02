@@ -13,8 +13,8 @@ const AddGroupButtonContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 93px;
-    height: 93px;
+    min-width: 93px;
+    min-height: 93px;
     border-radius: 50%;
     position: sticky;
     bottom: 40px;
@@ -22,6 +22,7 @@ const AddGroupButtonContainer = styled.div`
     margin-left: auto;
     background: rgba(22, 0, 139, 0.9);
     cursor: pointer;
+    margin-top: 50px;
 
     span {
         color: white;

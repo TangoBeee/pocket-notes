@@ -78,6 +78,7 @@ const AddGroupModal = ({ isOpen, onClose, setGroups }) => {
 	)
 }
 
+
 const ModalContainer = styled.div`
     position: absolute;
     display: flex;
@@ -97,6 +98,8 @@ const ModalContainer = styled.div`
         padding: 30px 50px;
         background-color: white;
         gap: 24px;
+        max-width: 90%;
+        max-height: 90%;
 
         .name-input {
             margin-bottom: 10px;
@@ -108,23 +111,21 @@ const ModalContainer = styled.div`
             align-items: center;
 
             .input-label {
-                margin-right: 40px;
+                margin-right: 20px;
+                font-size: 18px;
             }
 
             input {
-                width: 435px;
-                height: 51px;
-                top: 439px;
-                left: 641px;
-                gap: 0px;
+                width: 65%;
+                height: 40px;
                 border-radius: 22px;
                 border: 2px solid rgba(204, 204, 204, 1);
-                padding: 25px;
+                padding: 10px;
                 outline: 0;
                 color: black;
-                font-size: 23px;
+                font-size: 16px;
                 font-weight: 400;
-                line-height: 36.84px;
+                line-height: 24px;
                 letter-spacing: 0.035em;
                 text-align: left;
                 
@@ -135,12 +136,12 @@ const ModalContainer = styled.div`
 
             .group-color-items-wrapper {
                 display: flex;
-                gap: 15px;
-
+                gap: 10px;
+                flex-wrap: wrap;
 
                 .group-color-selector {
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                     border-radius: 50%;
 
                     &.selected {
@@ -152,24 +153,24 @@ const ModalContainer = styled.div`
 
         div {
             color: black;
-            font-size: 29px;
+            font-size: 24px;
             font-weight: 500;
-            line-height: 46.45px;
+            line-height: 32px;
             letter-spacing: 0.035em;
             text-align: left;
         }
 
         .group-create-button {
             all: unset;
-            padding: 6px 50px;
+            padding: 6px 20px;
             border-radius: 11px;
             align-self: flex-end;
             background-color: rgba(0, 31, 139, 1);
 
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
-            line-height: 32.04px;
+            line-height: 24px;
             letter-spacing: 0.035em;
             text-align: left;
             cursor: pointer;
@@ -194,6 +195,45 @@ const ModalContainer = styled.div`
             color: red;
         }
     }
-`
+
+    @media (max-width: 600px) {
+        .modal-content {
+            padding: 20px;
+            gap: 16px;
+        }
+
+        .group-input-wrapper {
+            .input-label {
+                margin-right: 10px;
+            }
+
+            input {
+                width: 100%;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .group-color-items-wrapper {
+                gap: 8px;
+
+                .group-color-selector {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        div {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        .group-create-button {
+            padding: 6px 16px;
+            font-size: 16px;
+        }
+    }
+`;
+
 
 export default AddGroupModal

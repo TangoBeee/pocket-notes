@@ -7,7 +7,7 @@ import { fetchAllGroups } from '../../utils/api'
 
 const Sidebar = ({ onGroupClick }) => {
   const [groups, setGroups] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
 
 
   const loadGroups = async () => {
@@ -44,7 +44,9 @@ const Sidebar = ({ onGroupClick }) => {
                 key={`group-item-${index}`}
                 color={item.color}
                 name={item.name}
-                onClick={() => onGroupClick(item)}
+                onClick={() => {
+                  onGroupClick(item)
+                }}
               />
             ))}
 

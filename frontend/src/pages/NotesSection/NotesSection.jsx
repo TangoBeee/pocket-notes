@@ -4,10 +4,11 @@ import GroupIcon from '../../components/GroupIcon'
 import SendIconInctive from '../../assets/send-arrow-icon-inactive.svg'
 import SendIconActive from '../../assets/send-arrow-icon-active.svg'
 import NoteItem from '../../components/NoteItem'
+import BackIcon from '../../assets/back-icon.svg'
 import { sortNotesByDateTime } from '../../utils/sortNoteItems'
 import { addNoteInGroup } from '../../utils/api'
 
-const NotesSection = ({ groupName, groupColor, groupNotes }) => {
+const NotesSection = ({ groupName, groupColor, groupNotes, setSelectedGroup }) => {
   const [notes, setNotes] = useState(groupNotes)
   const [newNote, setNewNote] = useState('')
   const [error, setError] = useState(null)
@@ -55,9 +56,14 @@ const NotesSection = ({ groupName, groupColor, groupNotes }) => {
     }
   }
 
+  const handleBack = () => {
+    setSelectedGroup(null)
+  }
+
   return (
     <NotesSectionContainer>
       <div className='notes-header-wrapper'>
+        <img onClick={handleBack} className='back-button' src={BackIcon} alt="Back Button" />
         <GroupIcon name={groupName} color={groupColor} />
         <div className='group-name'>
             {groupName}

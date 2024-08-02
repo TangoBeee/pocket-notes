@@ -16,6 +16,14 @@ export const NotesSectionContainer = styled.div`
         padding: 15px 30px;
         background-color: rgba(0, 31, 139, 1);
 
+        .back-button {
+            display: none;
+
+            @media (max-width: 900px) {
+                display: block;
+            }
+        }
+
         .group-name {
             color: white;
             font-size: 24px;
@@ -82,6 +90,10 @@ export const NotesSectionContainer = styled.div`
 
         .disabled-save-notes {
             cursor: not-allowed;
+        }
+
+        @media (max-height: 700px) {
+            height: 160px;
         }
     }
 

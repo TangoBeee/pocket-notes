@@ -10,8 +10,13 @@ export const HomeContainer = styled.div`
     background-color: rgba(218, 229, 245, 1);
 
     .hero-img-wrapper {
+        margin-top: auto;
         width: 626px;
         pointer-events: none;
+
+        @media (max-height: 550px) {
+            width: 300px;
+        }
     }
 
     .hero-content-wrapper {
@@ -40,8 +45,8 @@ export const HomeContainer = styled.div`
         display: flex;
         gap: 10px;
         align-items: center;
-        position: absolute;
-        bottom: 30px;
+        margin-top: auto;
+        margin-bottom: 20px;
 
         img {
             pointer-events: none;
@@ -58,5 +63,9 @@ export const HomeContainer = styled.div`
 
     @media (max-width: 1300px) {
         flex: 2;
+    }
+
+    @media (max-width: 900px) {
+        display: none;
     }
 `
